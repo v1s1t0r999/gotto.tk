@@ -35,6 +35,7 @@ def gen_random_words(wordlist="data/words.txt"):
 
 
 def constant(c):
+	# imported here so that if any new value is added in the file, its gets updated
 	from data import constants
 	try:
 		return constants._dict[c.lower()]
@@ -45,9 +46,9 @@ def constant(c):
 def _endpoint(ep,data):
 	try:
 		data[ep.lower()]
-		return True     # "ep" name exists in db! Returns the redirect-site
+		return True     # "ep" name exists in db!
 	except KeyError:
-		return False  # "ep" doesn't exists so generate a random_word
+		return False  # "ep" doesn't exists!
 
 def _src(src,data):
 	for elem in data:
@@ -91,18 +92,14 @@ def create_redirect_code(src):
 
 
 
-def pages(page):
-	"""
-	Returns the content of any file in data dir. File should exist.
-	"""
-	with open(f"data/{page.lower()}","r") as f:
-		con = f.read()
-	return con
 
 
 
 
 def link_exists(src):
+	"""
+	Checks whether the source exists. Why to fill memory for non-existant links :|
+	"""
 	try:
 		site = r.get(src,timeout=2)
 	except r.ConnectionError:
