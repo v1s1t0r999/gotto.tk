@@ -35,4 +35,13 @@ Send a `GET` request to `http://gotto.tk/all_links.json` and recieve the JSON re
 ---
 
 
+# VERY SOOS
+## HOW?!?!?!?!?
+`GET` request to `http://v1s1t0r999.herokuapp.com/email?email_id=<RECEIVER@EMAIL.COM>` with `json` as:
+```json
+{'subject':'IMPORTANT!', 'body':'THIS THING WORKS FOR REAL!!!!!'}
+```
+# -AND SEND EMAIL TO ANYONE ANONYMOUSLY!!
+
+
 #ceoforever!
