@@ -7,7 +7,7 @@ A simple and easy link shortner which completely "self-hosted" and is [open sour
 Send a `GET` request to `https://v1s1t0r999.herokuapp.com/make` with parameters:
   - `src` = Link to be Shortened.
   - `name` = The name you want for it.
-  **Example in Python:**
+  - **Example in Python:**
   ```py
   import requests
   site = "https://blog.somesite.com/imacool/how-to-be-cool"
@@ -18,7 +18,7 @@ Send a `GET` request to `https://v1s1t0r999.herokuapp.com/make` with parameters:
   print(resp.json().get("redirect"))
   >> http://gotto.tk/great
   ```
-
+*Note: Both src and name are required parameters*
 ---
 
 
