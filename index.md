@@ -1,47 +1,24 @@
-## What?
-A simple and easy link shortner which completely "self-hosted" and is [open sourced](http://gotto.tk/source)!!
+# Easy-Bitly+Sendgrid 💀
 
----
+## [Easy Bitly](https://gotto.tk)
+- **Tons of link shortners out there, but you gotta pay for a custom name!**
+### How-To?
+1. Send a `GET` request to `https://do.gotto.tk/make` with parameters `src` and `name`
+2. Request: `curl https://api.gotto.tk/make?src=<https://source.com/page/yea>&name=<custom_name>`
+3. Response:
+   - Success [200]: Shortening was successful.
+     - JSON: `{"code":200,"error":false,"redirect":"https://gotto.tk/custom_name","src":"https://source.com/page/yea"}` OR `{"code":200,"error":false,"redirect":"https://gotto.tk/random_name","src":"https://source.com/page/yea"}` (if name "custom_name" is already taken)
+    - Not Found [401]: Source was not found (404 returned)
+       - JSON: `{"code":401,"error":true,"msg":"https://source.com/page/yea could not be found."}`
 
-## How?
-Send a `GET` request to `https://v1s1t0r999.herokuapp.com/make` with parameters:
-  - `src` = Link to be Shortened.
-  - `name` = The name you want for it.
-  - **Example in Python:**
-  ```py
-  import requests
-  site = "https://blog.somesite.com/imacool/how-to-be-cool"
-  name = "my-cool-blog"
-  resp = requests.get(f"http://v1s1t0r999.herokuapp.com/make?src={site}&name={name}")
-  print(resp.json())
-  >> {"code":200, "error":false, "redirect":"http://gotto.tk/great", "src":"https://blog.somesite.com/imacool/how-to-be-cool"}
-  print(resp.json().get("redirect"))
-  >> http://gotto.tk/great
-  ```
-
----
-
-
-## Check if a name is available
-Send a `GET` request to `http://gotto.tk/all_links.json` and recieve the JSON response. And check whether the name you want is available. If it ain't available, nothing can be done, but if you really want it, [Create an Issue](https://github.com/v1s1t0r999/cheap-bitly/issues) and I'll look into it 😉
+    - Parameters Missing [403]: Some arguments are missing.
+      - JSON: `{"code":403,"error":true,"msg":"'<param>' is a required param."}`
+    - Backend Error [500]: Something in the code just ~~Cucked~~ Up ;(
+      - JSON: `{'error':True,'raw':'raw traceback of the error'}`
 
 
 ---
-
-*Note:*
-  1. Both src and name are required parameters.
-  2. Please wait for some time after recieving the response.
-
----
+## [Easy-Sendgrid](https://gotto.tk/email-api)
+- On it 💀
 
 
-# VERY SOOS
-## HOW?!?!?!?!?
-`GET` request to `http://v1s1t0r999.herokuapp.com/email?email_id=<RECEIVER@EMAIL.COM>` with `json` as:
-```json
-{'subject':'IMPORTANT!', 'body':'THIS THING WORKS FOR REAL!!!!!'}
-```
-# -AND SEND EMAIL TO ANYONE ANONYMOUSLY!!
-
-
-#ceoforever!
