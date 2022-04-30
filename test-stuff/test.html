@@ -1,22 +1,10 @@
 lol
-is it
-<p id="jsonresp">m is</p>
+is it 1
+<p id="jsonresp">m is v1</p>
 <!-- <script src='/test-stuff/test.js'></script> -->
 <script>
-  
-//create XMLHttpRequest object
-const xhr = new XMLHttpRequest()
-//open a get request with the remote server URL
-xhr.open("GET", "https://v1s1t0r999.herokuapp.com/make?src=https://leafstudios.com&name=testt")
-//send the Http request
-xhr.send()
-
-//EVENT HANDLERS
-
-//triggered when the response is completed
-xhr.onload = function() {
-  data = JSON.parse(xhr.responseText)
-  document.getElementById('jsonresp').innerHTML = data
+  fetch("https://v1s1t0r999.herokuapp.com/make?src=https://google.me&name=maughlol", { mode: 'no-cors'}).then(blob => blob.json());
+  document.getElementById('jsonresp').innerHTML = blob
 }
       
 </script>
