@@ -23,8 +23,18 @@
 - Request: (GET)
    `curl https://v1s1t0r999.herokuapp.com/email?email_id=myemail@anyservice.com` with json as `{"subject":"That's a subject.", "body":"Heh...thats the body!"}`
 - Response:
-   ```
-   {'code': 200, 'data': {'email_body': "Heh...thats the body!", 'sent_to': 'myemail@anyservice.com', 'subject': "That's a subject."}, 'error': False, 'msg': 'Success!', 'raw': "\n\t\t\t\x1b[96mSender:\x1b[0m gotto.tk@gmail.com\n\t\t\t\x1b[96mRecipient(s):\x1b[0m \n\nmyemail@anyservice.com\t\t\t------------------------------\n\n\t\t\t\x1b[96mSubject: That's a subject\x1b[0m \n\t\t\t\x1b[96mMessage:\x1b[0m Heh...thats the body!\n\n\n---\nSent Anonymously using `https://gotto.tk` ;)\n---\n"}
+   ```json
+   {
+    "code": 200,
+    "data": {
+        "email_body": "This don't work: https://discord.gg/zFBfXDY7RY",
+        "sent_to": "pritam42069@protonmail.com",
+        "subject": "BRUH"
+    },
+    "error": false,
+    "msg": "Success!",
+    "raw": "\n\t\t\t\u001b[96mSender:\u001b[0m gotto.tk@gmail.com\n\t\t\t\u001b[96mRecipient(s):\u001b[0m pritam42069@protonmail.com\n\n\t\t\t------------------------------\n\n\t\t\t\u001b[96mSubject:\u001b[0m BRUH\n\t\t\t\u001b[96mMessage:\u001b[0m This don't work: https://discord.gg/zFBfXDY7RY\n\n\n---\nSent Anonymously using `https://gotto.tk` ;)\n---\n"
+}
    ```
 
 
