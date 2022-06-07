@@ -1,40 +1,36 @@
-# Easy-Bitly+Sendgrid 💀
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gotto.TK Network!">
+    <meta name="author" content="lost">
+    <link rel="stylesheet" href="/static/header.css">
+<!--     <link rel="stylesheet" href="/static/user.css"> -->
+    <link rel="stylesheet" href="/static/theme.css">
+<!--     <link rel="stylesheet" href="/static/flags.css"> -->
+    <title>GOTTO.TK</title>
+</head>
+    <body>
+           <header>
+                <div class="topnav">
+                    <nav id='navbar'>
+                    <a href="https://gotto.tk" target="blank">Home</a>
+                    <a href="https://threads.gotto.tk" target="_blank">Threads</a>
+                    <a href="https://work.gotto.tk" target="_blank">Work</a>
+                    <a href="https://me.gotto.tk" target="_blank">By</a>
+                    </nav>
+                </div>
+            </header>
+<body>
+   HI
+</body>
+<br><br><br><br>
+    <hr>
+    <p style="text-align: center;"><footer>&#169; none, never</footer></p>
+    <hr>
+</body>
+</html>
 
-## [Easy Bitly](https://gotto.tk)
-- **Tons of link shortners out there, but you gotta pay for a custom name!**
-### How-To?
-1. Send a `GET` request to `https://v1s1t0r999.herokuapp.com/make` with parameters `src` and `name`
-2. Request: `curl https://v1s1t0r999.herokuapp.com/make?src=https://source.com/page/yea&name=custom_name`
-3. Response:
-   - Success [200]: Shortening was successful.
-     - JSON: `{"code":200,"error":false,"redirect":"https://gotto.tk/custom_name","src":"https://source.com/page/yea"}` OR `{"code":200,"error":false,"redirect":"https://gotto.tk/random_name","src":"https://source.com/page/yea"}` (if name "custom_name" is already taken)
-    - Not Found [401]: Source was not found (404 returned)
-       - JSON: `{"code":401,"error":true,"msg":"https://source.com/page/yea could not be found."}`
-
-    - Parameters Missing [403]: Some arguments are missing.
-      - JSON: `{"code":403,"error":true,"msg":"'<param>' is a required param."}`
     
-    - Backend Error [500]: Something in the code just ~~Cucked~~ Up ;(
-      - JSON: `{'error':True,'raw':'raw traceback of the error'}`
-
-
----
-## [Easy-Sendgrid](https://gotto.tk/email-api)
-- Request: (GET)
-   `curl https://v1s1t0r999.herokuapp.com/email?email_id=myemail@anyservice.com` with json as `{"subject":"That's a subject.", "body":"Heh...thats the body!"}`
-- Response:
-   ```json
-   {
-    "code": 200,
-    "data": {
-        "email_body": "Heh...thats the body!",
-        "sent_to": "myemail@anyservice.com",
-        "subject": "That's a subject."
-    },
-    "error": false,
-    "msg": "Success!",
-    "raw": "\n\t\t\t\u001b[96mSender:\u001b[0m gotto.tk@gmail.com\n\t\t\t\u001b[96mRecipient(s):\u001b[0m \n\nmyemail@anyservice.com\t\t\t------------------------------\n\n\t\t\t\u001b[96mSubject: That's a subject\u001b[0m \n\t\t\t\u001b[96mMessage:\u001b[0m Heh...thats the body!\n\n\n---\nSent Anonymously using `https://gotto.tk` ;)\n---\n"
-    }
-   ```
-
-
